@@ -4,18 +4,27 @@ class Pizza{
   constructor() {
     this.price = 0;
     this.toppings = [];
-    this.sizes = [new Size('Tiny'), new Size('Average'), new Size('Huge')];;
+    this.sizes = sizes;
   }
 }
 
-function prices() {
-  Pizza.toppings = .50;
-  const tiny = Pizza.sizes[0];
-  const average = Pizza.sizes[1];
-  const huge = Pizza.sizes[2];
-  tiny = 5.00;
-  average = 10.00;
-  huge = 20.00;
+function pricing(){
+const size = document.querySelector('input[id="size"]:checked').value; 
+let toppings = Pizza.toppings.document.querySelector('input[id#toppings"]checked').value
+	let sizePrice = 0;
+  let toppingPrice = 0;
+	if (size === "tiny") {
+		sizePrice = 8;
+	};
+	if (size === "average") {
+		sizePrice = 19;
+	};
+	if (size === "huge") {
+		sizePrice = 29;
+	}; 
+  if (toppings) {
+    toppingPrice = 1;
+  }
 }
 
 
