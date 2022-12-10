@@ -9,8 +9,8 @@ class Pizza{
 }
 
 function pricing(){
-const size = document.querySelector('input[id="size"]:checked').value; 
-let toppings = Pizza.toppings.document.querySelector('input[id#toppings"]checked').value
+const size = document.querySelector('input#size:checked').value; 
+let toppings = Pizza.toppings.document.querySelector('input#toppings:checked').value
 	let sizePrice = 0;
   let toppingPrice = 0;
 	if (size === "tiny") {
