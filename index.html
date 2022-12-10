@@ -10,45 +10,69 @@
     <div id="intro">
       <form id="start-page">
         <h1>Welcome To Pizza Palace</h1>
-        <button id="go">Start Order Here</button>
+        <button type="submit" id="go">Start Order Here</button>
       </form>
     </div> <!-- end intro -->
-    <div id="order-page"> 
-      <form id="size">
-        <input type="radio">
-        <label id="tiny">Tiny</label>
-        <br>
-        <input type="radio">
-        <label id="average">Average</label>
-        <br>
-        <input type="radio">
-        <label id="huge">Huge</label>
+    <div id="order-page" class="hidden"> 
+      <div id="sizing">
+        <form id="size">
+          <input type="radio">
+          <label id="tiny">Tiny</label>
+          <br>
+          <input type="radio">
+          <label id="average">Average</label>
+          <br>
+          <input type="radio">
+          <label id="huge">Huge</label>
       </form>
-      <form id="toppings">
-        <input type="checkbox">
-        <label id="bacon">Bacon</label>
-        <br>
-        <input type="checkbox">
-        <label id="Chicken">Chicken</label>
-        <br>
-        <input type="checkbox">
-        <label id="pepperoni">Pepperoni</label>
-        <br>
-        <input type="checkbox">
-        <label id="spinach">Spinach</label>
-        <br>
-        <input type="checkbox">
-        <label id="olives">Olives</label>
-        <br>
-        <input type="checkbox">
-        <label id="cheese">Xtra Cheese</label>
-        <br>
-        <input type="checkbox">
-        <label id="peppers">Peppers</label>
-      </form>
+      </div> <!-- end sizing -->
+      <div id="topping">
+        <form id="toppings">
+          <input type="checkbox">
+          <label id="bacon">Bacon</label>
+          <br>
+          <input type="checkbox">
+          <label id="Chicken">Chicken</label>
+          <br>
+          <input type="checkbox">
+          <label id="pepperoni">Pepperoni</label>
+          <br>
+          <input type="checkbox">
+          <label id="spinach">Spinach</label>
+          <br>
+          <input type="checkbox">
+          <label id="olives">Olives</label>
+          <br>
+          <input type="checkbox">
+          <label id="cheese">Xtra Cheese</label>
+          <br>
+          <input type="checkbox">
+          <label id="peppers">Peppers</label>
+        </form>
+      </div> <!-- end topping -->
+      <div id="pricing">
+        <form id="price">
+          <h1>Price</h1>
+          <br>
+          <label>Tiny = $5.00</label>
+          <br>
+          <label>Average = $10.00</label>
+          <br>
+          <label>Huge = $20.00</label>
+          <br>
+          <label>Each topping is $.50 Cents</label>
+        </form>
+      </div> <!--end pricing -->
+      <br>
+      <button type="submit" id="order">Place Order Here!</button>
     </div> <!-- end order page -->
-    <div id="success-page">
+    <div id="success-page" class="hidden">
       <h1>Thank you! Enjoy! </h1>
+      <span id="order-review"> 
+
+      </span>
+      <br>
+      <button type="submit" id="again">Place Another Order!</button>
     </div> <!-- end success page-->
   </div> <!-- end page -->
 </body>
