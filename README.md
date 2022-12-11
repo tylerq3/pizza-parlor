@@ -5,7 +5,7 @@
 #### _{Pizza Ordering}_
 
 ## Test 
-It should replace numbers containing '1' with 'Beep' code: input(1) Output [0, "Beep"]
+
 
 
 
@@ -22,16 +22,17 @@ _{This is an application in which you can order pizza}_
 ## Setup/Installation Requirements
 
 * Clone this repository
-* Navigate to Mr-Robogers
+* Navigate to pizza-parlor
 * Double click index.html 
-* Fill out the form
-* View the translation
+* Press the Start Order button
+* Place Order and press submit 
+* View your order
 
 
 
 ## Known Bugs
 
-* Currently there are no known bugs
+* The toppings are not adding on the pizza
 
 ## GitHub Link
 
