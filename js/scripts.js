@@ -20,8 +20,8 @@ function Pizza(toppings, size) {
 }
 
 function pricing() {
-const size = document.querySelector('input#size:checked').value; 
-let toppings = document.querySelector('input#toppings:checked').value
+const size = document.querySelector('input[name="size"]:checked').value; 
+let toppings = document.querySelector('input[name="toppings"]:checked').value
 	let sizePrice = 0;
   let toppingPrice = 0;
 	if (size === "tiny") {
