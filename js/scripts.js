@@ -1,16 +1,27 @@
 // Business Logic
 
-class Pizza{
+class Order{
   constructor() {
     this.price = 0;
-    this.toppings = [];
-    this.sizes = sizes;
+    this.pizzas = [];
   }
 }
 
-function pricing(){
+Order.addPizza = function Pizza() {
+  this.pizzas.push(pizza);
+}
+
+
+
+function Pizza(toppings, size) {
+  this.toppings = toppings;
+  this.size = size;
+  this.price = 0;
+}
+
+function pricing() {
 const size = document.querySelector('input#size:checked').value; 
-let toppings = Pizza.toppings.document.querySelector('input#toppings:checked').value
+let toppings = document.querySelector('input#toppings:checked').value
 	let sizePrice = 0;
   let toppingPrice = 0;
 	if (size === "tiny") {
@@ -25,11 +36,24 @@ let toppings = Pizza.toppings.document.querySelector('input#toppings:checked').v
   if (toppings) {
     toppingPrice = 1;
   }
+  return toppingPrice + sizePrice;
 }
 
 
 
 // User Interface Logic
+
+function addPizza() {
+  event.preventDefault();
+  let toppings = document.getElementById('input#toppings:checked').value
+  let pizzaSize = document.getElementById("sizing").value;
+  let selectedToppings = [toppings];
+  let pizza = new Pizza(pizzaSize, selectedToppings);
+  pricing();
+  let p = document.createElement("p");
+  pizza.append(p);
+
+}
 
 function startPageHandler() {
 event.preventDefault();
@@ -42,6 +66,7 @@ function orderPageHandler() {
   document.getElementById('intro').classList.add('hidden');
   document.getElementById('success-page').classList.remove('hidden');
   document.getElementById('order-page').classList.add('hidden');
+  addPizza();
 }
 
 function successPageHandler() {
@@ -49,7 +74,7 @@ function successPageHandler() {
   document.getElementById('order-page').classList.add('hidden');
   document.getElementById('intro').classList.remove('hidden');
   document.getElementById('success-page').classList.add('hidden');
-  console.log('it worked')
+  console.log(addPizza());
 }
 
 
