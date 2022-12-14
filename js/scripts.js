@@ -13,46 +13,55 @@ Order.addPizza = function Pizza() {
 
 
 
-function Pizza(toppings, size) {
+function Pizza(size, toppings) {
   this.toppings = toppings;
   this.size = size;
   this.price = 0;
 }
 
-function pricing() {
-const size = document.querySelector('input[name="size"]:checked').value; 
-let toppings = document.querySelector('input[name="toppings"]:checked').value
+Pizza.prototype.pricing = function () {
 	let sizePrice = 0;
   let toppingPrice = 0;
-	if (size === "tiny") {
+	if (this.size === "tiny") {
 		sizePrice = 8;
 	};
-	if (size === "average") {
+	if (this.size === "average") {
 		sizePrice = 19;
 	};
-	if (size === "huge") {
+	if (this.size === "huge") {
 		sizePrice = 29;
 	}; 
-  if (toppings) {
+  if (this.toppings) {
     toppingPrice = 1;
   }
-  return toppingPrice + sizePrice;
+  this.price = sizePrice + toppingPrice;
 }
 
 
 
 // User Interface Logic
 
+window.onload = function () {
+  const goButton = document.getElementById('go');
+  goButton.addEventListener("click", startPageHandler);
+
+  const orderButton = document.getElementById('order');
+  orderButton.addEventListener("click", orderPageHandler);
+
+  const againButton = document.getElementById('again');
+  againButton.addEventListener("click", successPageHandler);
+
+  const displayOrder = document.getElementById('display-order');
+
+
 function addPizza() {
   event.preventDefault();
-  let toppings = document.getElementById('input#toppings:checked').value
-  let pizzaSize = document.getElementById("sizing").value;
+  let toppings = document.querySelector('input[name=toppings]:checked').value;
+  let pizzaSize = document.querySelector('input[name=sizebtn]:checked').value;
   let selectedToppings = [toppings];
   let pizza = new Pizza(pizzaSize, selectedToppings);
-  pricing();
-  let p = document.createElement("p");
-  pizza.append(p);
-
+  pizza.pricing();
+  displayOrder.innerText = `Your total is $${pizza.price}`; 
 }
 
 function startPageHandler() {
@@ -74,17 +83,7 @@ function successPageHandler() {
   document.getElementById('order-page').classList.add('hidden');
   document.getElementById('intro').classList.remove('hidden');
   document.getElementById('success-page').classList.add('hidden');
-  console.log(addPizza());
+  
 }
 
-
-window.onload = function () {
-  const goButton = document.getElementById('go');
-  goButton.addEventListener("click", startPageHandler);
-
-  const orderButton = document.getElementById('order');
-  orderButton.addEventListener("click", orderPageHandler);
-
-  const againButton = document.getElementById('again');
-  againButton.addEventListener("click", successPageHandler);
 }
