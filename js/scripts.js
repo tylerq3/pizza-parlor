@@ -31,8 +31,23 @@ Pizza.prototype.pricing = function () {
 	if (this.size === "huge") {
 		sizePrice = 29;
 	}; 
-  if (this.toppings.length >= 1) {
+  if (this.toppings.length === 1) {
     toppingPrice = 1;
+  } 
+  if (this.toppings.length === 2) {
+    toppingPrice = 2;
+  }
+  if (this.toppings.length === 3) {
+    toppingPrice = 3;
+  }
+  if (this.toppings.length === 4) {
+    toppingPrice = 4;
+  }
+  if (this.toppings.length === 5) {
+    toppingPrice = 5;
+  }
+  if (this.toppings.length === 6) {
+    toppingPrice = 6;
   }
   this.price = sizePrice + toppingPrice;
 }
