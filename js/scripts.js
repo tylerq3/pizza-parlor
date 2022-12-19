@@ -31,7 +31,7 @@ Pizza.prototype.pricing = function () {
 	if (this.size === "huge") {
 		sizePrice = 29;
 	}; 
-  if (this.toppings) {
+  if (this.toppings.length >= 1) {
     toppingPrice = 1;
   }
   this.price = sizePrice + toppingPrice;
@@ -56,10 +56,14 @@ window.onload = function () {
 
 function addPizza() {
   event.preventDefault();
-  let toppings = document.querySelector('input[name=toppings]:checked').value;
+  let toppingsArray = []
+  document.querySelectorAll("input[name=toppings]:checked").forEach(function(element)   {
+  let topping = element.value; 
+  console.log(topping)
+  toppingsArray.push(topping);
+});
   let pizzaSize = document.querySelector('input[name=sizebtn]:checked').value;
-  let selectedToppings = [toppings];
-  let pizza = new Pizza(pizzaSize, selectedToppings);
+  let pizza = new Pizza(pizzaSize, toppingsArray);
   pizza.pricing();
   displayOrder.innerText = `Your total is $${pizza.price}`; 
 }

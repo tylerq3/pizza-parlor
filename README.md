@@ -7,19 +7,34 @@
 ## Test 
 Describe: pricing()
 
+Test: "It should calculate a Pizza pricing object with one property for size"
+Code: pizza = new Pizza(Average);
+pizza.pricing();
+pizza.price;
+Expected Output: 19;
+
+Describe: pricing()
+
+Test: "It should calculate a Pizza pricing object with one property for toppings"
+Code: pizza = new Pizza(Chicken, Pepperoni);
+pizza.pricing();
+pizza.toppings;
+Expected Output: 2;
+
+Describe: pricing()
+
 Test: "It should calculate a Pizza pricing object with two properties for toppings and size"
-Code: Pizza.prototype.pricing = function () { = new Pizza("Average", "Chicken");
-Expected Output: Your pizza is $20;
+Code: pizza = new Pizza(Chicken, Average);
+pizza.pricing();
+pizza.toppings;
+Expected Output: 20;
+
 
 Describe: Pizza(size, toppings)
 
 Test: "It should return a Pizza object with toppings, the size and the price"
-Code: function Pizza(size, toppings, price) {
-  this.toppings = toppings;
-  this.size = size;
-  this.price = 0;
-}
-Expected Output: Average, Chicken, $20;
+Code: order = new Pizza(Average, [Chicken]);
+Expected Output: {Average, [Chicken], 0};
 ## Technologies Used
 
 * HTML
